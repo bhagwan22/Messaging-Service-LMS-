@@ -7,7 +7,7 @@
 > It is based on "Lightning Message Channels" metadata type & use "Lightning Message Channel" to access LMS API
 	
 ## How to access lightning message channel
-	- LWC: @salesforce/messageChannel
+	- LWC: @salesforce/messageChannel/messagint_channel_Name__c
 	- VF: $MessageChannel
 	- Aura: lightning:messageChannel
 	
