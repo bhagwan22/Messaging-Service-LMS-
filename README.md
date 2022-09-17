@@ -9,7 +9,7 @@
 ## How to access lightning message channel
 	- LWC: @salesforce/messageChannel/messagint_channel_Name__c
 	- VF: $MessageChannel
-	- Aura: lightning:messageChannel
+	- Aura: <lightning:messageChannel type="messagingChannel_Name__c" aura:id=""/>
 	
 ## Use case:
 	- communicate b/w VF page/Aura & LWC 
