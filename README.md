@@ -8,7 +8,37 @@
 	
 ## How to access lightning message channel
  - LWC: @salesforce/messageChannel/messagint_channel_Name__c
- - VF: $MessageChannel
+```
+	#PUBLISHER IN LWC
+	import {publish, MessageContext} from 'lightning/messageService';
+	import MESSAGE_CHANNEL_NAME from '@salesforce/messageChannel/Record_Selected__c';
+
+	@wire(MessageContext)
+	 messageContext;
+
+	handleClick(){
+		var payload = '001aja0000ABXC';
+		publish(this.messageContext, MESSAGE_CHANNEL_NAME, payload);
+	}
+	
+	#SUBSCRIPTION IN LWC
+	import {subscribe, MessageContext } from 'lightning/messageService'; 
+	import MESSAGE_CHANNEL_NAME from '@salesforce/MessageChannel/Record_Selected__c';
+
+	subscription =null;
+
+	@wire(MessageContext)
+	 messageContext;
+
+	connectedCallback(){
+		this.subscription= subscribe(this.messageContext,MESSAGE_CHANNEL_NAME, (msg) =>this.handleMessage(msg));
+	}
+
+	handleMessage(mesg){
+		//do logic here
+	}
+```
+ - VF: $MessageChannel.messagingchannel_name__c
  - Aura: 
 ```
 # PUBLISH FROM AURA
