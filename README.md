@@ -9,7 +9,7 @@
 ## How to access lightning message channel
  - LWC: @salesforce/messageChannel/messagint_channel_Name__c
 ```
-	#PUBLISHER IN LWC
+#PUBLISHER IN LWC
 	import {publish, MessageContext} from 'lightning/messageService';
 	import MESSAGE_CHANNEL_NAME from '@salesforce/messageChannel/Record_Selected__c';
 
@@ -21,7 +21,7 @@
 		publish(this.messageContext, MESSAGE_CHANNEL_NAME, payload);
 	}
 	
-	#SUBSCRIPTION IN LWC
+#SUBSCRIPTION IN LWC
 	import {subscribe, MessageContext } from 'lightning/messageService'; 
 	import MESSAGE_CHANNEL_NAME from '@salesforce/MessageChannel/Record_Selected__c';
 
