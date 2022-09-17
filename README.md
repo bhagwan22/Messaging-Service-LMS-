@@ -7,9 +7,26 @@
 > It is based on "Lightning Message Channels" metadata type & use "Lightning Message Channel" to access LMS API
 	
 ## How to access lightning message channel
-	- LWC: @salesforce/messageChannel/messagint_channel_Name__c
-	- VF: $MessageChannel
-	- Aura: <lightning:messageChannel type="messagingChannel_Name__c" aura:id=""/>
+ - LWC: @salesforce/messageChannel/messagint_channel_Name__c
+ - VF: $MessageChannel
+ - Aura: 
+```
+# PUBLISH FROM AURA
+ <lightning:messageChannel type="messagingChannel_Name__c" aura:id="auraId_channel"/>
+ 
+ var param = = { recordId: event.target.contact.Id };
+ comp.find('auraId_channel').publish(param);
+ 
+# SUBSCRIBE IN AURA
+  <lightning:messageChannel type ="messagingChannel_Name__c" aura:id="aura_recd_id" onMessage="{!c.handleMessage}"
+  
+  handleMessage: function(comp, message){
+  	if(message && message.getParam('recordId')){
+		// logic here
+	}
+  }
+
+```
 	
 ## Use case:
 	- communicate b/w VF page/Aura & LWC 
