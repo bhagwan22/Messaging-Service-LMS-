@@ -1,3 +1,5 @@
+> Define Lightning Message Channel
+
 ## Setp 1:
   > update package.xml file 
   ```
