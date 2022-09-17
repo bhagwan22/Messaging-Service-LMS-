@@ -44,7 +44,7 @@
 # PUBLISH FROM AURA
  <lightning:messageChannel type="messagingChannel_Name__c" aura:id="auraId_channel"/>
  
- var param = = { recordId: event.target.contact.Id };
+ var param = { recordId: event.target.contact.Id };
  comp.find('auraId_channel').publish(param);
  
 # SUBSCRIBE IN AURA
